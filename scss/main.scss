@@ -1,6 +1,6 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
+
 
         * {
             box-sizing: border-box;
@@ -8,8 +8,8 @@
         
         body {
             @include background;
-            background-color: $primary-color;
-            color: #fff;
+            background: $primary-color;
+            color: set-text-color($primary-color);
             height: 100%;
             margin: 0;
             font-family: 'Raleway', sans-serif;
@@ -44,7 +44,7 @@ width: 100%;}
 }
 main{
     padding: 4rem;
-height: 100%;
+min-height: calc(100vh - 30px);
 margin-top: 0;
 a{
     padding: 0.4rem;
@@ -60,3 +60,30 @@ margin-top: 20vh;
     }
 }
 }
+.about-info {
+    display: grid;
+    grid-gap: 30 px;
+    grid-template-areas: 'bioimage bio bio';
+    grid-template-columns: repeat(3, 1fr);
+}
+.bio-image{
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+    width: 50%;
+    height: 50%vh;
+}
+.bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+}
+#main-footer {
+    text-align: center;
+    padding: 1 rem;
+    background: darken($color: ($primary-color), $amount: 10);
+    color : set-text-color($primary-color) ;
+    height: 30px;
+   width: 100%;
+}
+@import 'mobile';

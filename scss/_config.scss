@@ -1,5 +1,5 @@
-$primary-color:#3d3d3d;
-$secondary-color:#ffde24;
+$primary-color:#302f2f;
+$secondary-color:#c71585;
 $show-home-image:true;
 $home-image:url(../img/slider-portfolio.png);
 $image:url(../img/pictureme.png);
@@ -27,6 +27,16 @@ $background-opacity:0.8;
         }
     }
 }
+// Set Text color according to background color
+@function set-text-color($color){
+    @if (lightness($color) > 40){
+        @return black;
+    }
+    @else {
+        @return white;
+    }
+}
+//Media query mixins
 @mixin mediaSm {
     @media screen and (max-width: 500px){
         @content;
