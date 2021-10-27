@@ -1,2 +1,0 @@
-# latestPortfolio
-Responsive portfolio
